@@ -1,0 +1,12 @@
+﻿t = [-4:0.001:4];
+x = @(t) t.*(t>=0 & t<=1);
+v = @(t) x(-t);
+y = @(t) v(t-2);
+w = @(t) x(t-2);
+z = @(t) w(-t);
+subplot(211);plot(t,y(t));
+xlabel('t');
+ylabel('y(t)');
+subplot(212);plot(t,z(t));
+xlabel('t');
+ylabel('z(t)');
